@@ -1,6 +1,10 @@
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('nav');
 const languageToggle = document.querySelector('.language-toggle');
+const languageSelector = document.querySelector('.language-selector');
+const languageMenu = document.querySelector('.language-menu');
+const languageCurrent = document.querySelector('.language-current');
+const languageOptions = document.querySelectorAll('[data-language]');
 const titleElement = document.querySelector('title');
 const descriptionElement = document.querySelector('meta[name="description"]');
 
@@ -97,7 +101,7 @@ const translations = {
 const textNodes = [];
 const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
   acceptNode(node) {
-    return ['SCRIPT', 'STYLE'].includes(node.parentElement?.tagName)
+    return node.parentElement?.closest('script, style, [data-no-translate]')
       ? NodeFilter.FILTER_REJECT
       : NodeFilter.FILTER_ACCEPT;
   }
@@ -126,9 +130,8 @@ const applyLanguage = (language) => {
 
   nav.setAttribute('aria-label', language === 'en' ? 'Primary navigation' : '主导航');
   toggle.setAttribute('aria-label', language === 'en' ? 'Open menu' : '展开菜单');
-  languageToggle.textContent = language === 'en' ? '中文' : 'EN';
-  languageToggle.setAttribute('aria-label', language === 'en' ? 'Switch to Chinese' : 'Switch to English');
-  languageToggle.setAttribute('aria-pressed', String(language === 'en'));
+  languageCurrent.textContent = language === 'en' ? 'English' : '中文';
+  languageToggle.setAttribute('aria-label', language === 'en' ? 'Choose language' : '选择语言');
 
   try {
     localStorage.setItem('twinforge-language', language);
@@ -152,12 +155,34 @@ document.querySelectorAll('nav a').forEach((link) => {
   });
 });
 
+const closeLanguageMenu = () => {
+  languageMenu.hidden = true;
+  languageToggle.setAttribute('aria-expanded', 'false');
+};
+
 languageToggle?.addEventListener('click', () => {
-  const nextLanguage = document.documentElement.lang === 'en' ? 'zh' : 'en';
-  applyLanguage(nextLanguage);
-  nav.classList.remove('open');
-  toggle.setAttribute('aria-expanded', 'false');
-  toggle.textContent = nextLanguage === 'en' ? 'Menu' : '菜单';
+  const willOpen = languageMenu.hidden;
+  languageMenu.hidden = !willOpen;
+  languageToggle.setAttribute('aria-expanded', String(willOpen));
+});
+
+languageOptions.forEach((option) => {
+  option.addEventListener('click', () => {
+    const nextLanguage = option.dataset.language;
+    applyLanguage(nextLanguage);
+    closeLanguageMenu();
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = nextLanguage === 'en' ? 'Menu' : '菜单';
+  });
+});
+
+document.addEventListener('click', (event) => {
+  if (!languageSelector.contains(event.target)) closeLanguageMenu();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeLanguageMenu();
 });
 
 try {

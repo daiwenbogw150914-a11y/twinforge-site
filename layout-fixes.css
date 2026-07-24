@@ -6,7 +6,13 @@
 .brand-letter-i::before{position:absolute;top:-.38em;left:50%;width:.24em;height:.24em;transform:translateX(-50%);border-radius:50%;background:var(--lav);content:""}
 .brand-copy small{display:block;margin:4px 0 0 2px;color:var(--lav);font-size:8px;letter-spacing:4.4px;line-height:1}
 .header-actions{display:flex;align-items:center;gap:17px}
-.language-toggle{min-width:38px;padding:7px 8px;border:1px solid #b9b5b8;border-radius:999px;background:transparent;color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.7px;cursor:pointer}
+.language-selector{position:relative}
+.language-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:74px;padding:7px 10px;border:1px solid #b9b5b8;border-radius:999px;background:transparent;color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.4px;cursor:pointer}
+.language-toggle::after{width:6px;height:6px;margin-top:-3px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);content:""}
+.language-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:30;min-width:112px;padding:5px;border:1px solid #d4d0d2;border-radius:12px;background:rgba(255,255,255,.98);box-shadow:0 14px 30px rgba(32,33,38,.14)}
+.language-menu[hidden]{display:none}
+.language-menu button{display:block;width:100%;padding:9px 11px;border:0;border-radius:8px;background:transparent;color:var(--ink);font:inherit;font-size:13px;text-align:left;cursor:pointer}
+.language-menu button:hover,.language-menu button:focus-visible{background:#f0eaf2;outline:none}
 .brand-mark{position:relative;width:30px;height:31px;flex:0 0 30px}
 .brand-mark i:nth-child(1){left:1px;bottom:2px;width:10px;height:25px;border-radius:13px 0 1px 1px}
 .brand-mark i:nth-child(2){right:5px;bottom:2px;width:12px;height:14px;border-radius:0 12px 1px 1px}
@@ -25,7 +31,7 @@
   .brand-mark i:nth-child(4){width:6px;height:6px}
   .brand-copy small{font-size:8px;letter-spacing:4.7px}
   .header-actions{gap:11px}
-  .language-toggle{min-width:40px;padding:8px 9px;font-size:11px}
+  .language-toggle{min-width:76px;padding:8px 10px;font-size:11px}
 
   .hero{min-height:auto;padding:76px 7vw 46px}
   .hero h1{margin:16px 0 22px;font-size:clamp(31px,8.6vw,35px);line-height:1.17;letter-spacing:-.1em}

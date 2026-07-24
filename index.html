@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="layout-fixes.css" />
+  <link rel="stylesheet" href="styles.css?v=20260724-5" />
+  <link rel="stylesheet" href="layout-fixes.css?v=20260724-5" />
 </head>
 <body>
   <header class="site-header">
@@ -18,7 +18,13 @@
       <span class="brand-copy" aria-hidden="true"><span class="brand-word">Tw<span class="brand-letter-i"></span>nforge</span><small>LIMITED</small></span>
     </a>
     <div class="header-actions">
-      <button class="language-toggle" type="button" aria-label="切换至英文" aria-pressed="false">EN</button>
+      <div class="language-selector" data-no-translate>
+        <button class="language-toggle" type="button" aria-label="选择语言" aria-haspopup="menu" aria-controls="language-menu" aria-expanded="false"><span class="language-current">中文</span></button>
+        <div class="language-menu" id="language-menu" role="menu" hidden>
+          <button type="button" role="menuitem" data-language="zh">中文</button>
+          <button type="button" role="menuitem" data-language="en">English</button>
+        </div>
+      </div>
       <button class="menu-toggle" aria-label="展开菜单" aria-expanded="false">菜单</button>
       <nav aria-label="主导航">
         <a href="#about">关于我们</a>
@@ -172,6 +178,6 @@
     <p>© 2026 Twinforge Limited. All rights reserved.</p>
     <a href="#top">返回顶部 ↗</a>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=20260724-5"></script>
 </body>
 </html>
