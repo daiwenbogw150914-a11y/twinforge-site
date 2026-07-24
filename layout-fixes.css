@@ -1,0 +1,13 @@
+/* Keep the hero navigation in normal document flow so it never collides with the CTA. */
+.hero-footer{
+  position:relative;
+  z-index:2;
+  bottom:auto;
+  left:auto;
+  right:auto;
+  margin-top:80px;
+}
+
+@media (max-width:720px){
+  .hero-footer{margin-top:48px}
+}
