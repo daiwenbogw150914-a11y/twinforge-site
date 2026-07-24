@@ -91,7 +91,6 @@ const translations = {
   '传真：(852) 2521 1478': 'Fax: (852) 2521 1478',
   '电子邮箱': 'Email',
   '办公地址': 'Office address',
-  '香港灣仔駱克道300號浙江興業大廈12楼A室': 'Flat/Rm A, 12/F, ZJ 300, 300 Lockhart Road, Wan Chai, Hong Kong',
   '返回顶部': 'Back to top',
   '返回顶部 ↗': 'Back to top ↗',
   '菜单': 'Menu',
