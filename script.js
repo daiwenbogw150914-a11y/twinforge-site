@@ -173,16 +173,29 @@ const setActiveSection = (id) => {
 
 if (linkedSections[0]) setActiveSection(linkedSections[0].id);
 
-if ('IntersectionObserver' in window) {
-  const sectionObserver = new IntersectionObserver((entries) => {
-    const visibleSection = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
-    if (visibleSection?.target.id) setActiveSection(visibleSection.target.id);
-  }, { rootMargin: '-32% 0px -58% 0px', threshold: [0.05, 0.2, 0.5] });
+const syncActiveSection = () => {
+  const readingPoint = window.scrollY + window.innerHeight * 0.36;
+  let currentSection = linkedSections[0];
 
-  linkedSections.forEach((section) => sectionObserver.observe(section));
-}
+  linkedSections.forEach((section) => {
+    if (section.offsetTop <= readingPoint) currentSection = section;
+  });
+
+  if (currentSection?.id) setActiveSection(currentSection.id);
+};
+
+let sectionScrollQueued = false;
+window.addEventListener('scroll', () => {
+  if (sectionScrollQueued) return;
+  sectionScrollQueued = true;
+  window.requestAnimationFrame(() => {
+    syncActiveSection();
+    sectionScrollQueued = false;
+  });
+}, { passive: true });
+
+window.addEventListener('hashchange', syncActiveSection);
+syncActiveSection();
 
 const closeLanguageMenu = () => {
   languageMenu.hidden = true;
