@@ -1,7 +1,9 @@
 /* Use the supplied official lockup rather than a CSS recreation. */
 .brand{display:inline-flex;align-items:center;min-width:0;color:var(--ink)}
 .brand-logo-frame{position:relative;display:block;width:178px;height:55px;overflow:hidden}
-.brand-logo{position:absolute;top:-50px;left:-36px;display:block;width:243px;max-width:none;height:auto;mix-blend-mode:multiply}
+.brand-logo{position:absolute;top:-49px;left:-34px;display:block;width:240px;max-width:none;height:auto;mix-blend-mode:multiply}
+.brand-wordmark-frame{position:relative;display:block;width:150px;height:36px;overflow:hidden}
+.brand-wordmark{position:absolute;top:-22px;left:-29px;display:block;width:206px;max-width:none;height:auto;mix-blend-mode:multiply}
 .header-actions{display:flex;align-items:center;gap:17px}
 .language-selector{position:relative}
 .language-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:74px;padding:7px 10px;border:1px solid #b9b5b8;border-radius:999px;background:transparent;color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.4px;cursor:pointer}
@@ -10,6 +12,8 @@
 .language-menu[hidden]{display:none}
 .language-menu button{display:block;width:100%;padding:9px 11px;border:0;border-radius:8px;background:transparent;color:var(--ink);font:inherit;font-size:13px;text-align:left;cursor:pointer}
 .language-menu button:hover,.language-menu button:focus-visible{background:#f0eaf2;outline:none}
+.contact-brand-mark{position:absolute;top:32px;right:7vw;width:78px;height:74px;overflow:hidden;pointer-events:none}
+.contact-brand-mark img{position:absolute;top:-35px;left:-44px;display:block;width:153px;max-width:none;height:auto;mix-blend-mode:multiply}
 .hero h1>span,.hero h1 em{display:block}
 .hero h1{font-size:clamp(40px,5vw,74px);letter-spacing:-.085em}
 .hero h1>span,.hero h1 em{white-space:nowrap!important}
@@ -24,7 +28,9 @@ html[lang="en"] .hero h1{font-size:clamp(32px,4.3vw,60px);letter-spacing:-.065em
 @media(max-width:720px){
   .site-header{height:68px}
   .brand-logo-frame{width:145px;height:45px}
-  .brand-logo{top:-41px;left:-29px;width:198px}
+  .brand-logo{top:-40px;left:-28px;width:195px}
+  .contact-brand-mark{top:18px;right:7vw;width:64px;height:61px}
+  .contact-brand-mark img{top:-29px;left:-36px;width:126px}
   .header-actions{gap:11px}
   .language-toggle{min-width:76px;padding:8px 10px;font-size:11px}
 
