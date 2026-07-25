@@ -1,12 +1,12 @@
 /* Use the supplied official lockup rather than a CSS recreation. */
 .brand{display:inline-flex;align-items:center;min-width:0;color:var(--ink)}
-.brand-combination{display:flex;align-items:center;gap:10px;min-width:0}
-.brand-emblem-frame{position:relative;display:block;width:38px;height:37px;overflow:hidden;flex:0 0 38px}
-.brand-emblem{position:absolute;top:-17px;left:-21px;display:block;width:76px;max-width:none;height:auto;mix-blend-mode:multiply}
-.brand-logo-frame{position:relative;display:block;width:164px;height:51px;overflow:hidden}
-.brand-logo{position:absolute;top:-45px;left:-31px;display:block;width:221px;max-width:none;height:auto;mix-blend-mode:multiply}
-.brand-wordmark-frame{position:relative;display:block;width:150px;height:36px;overflow:hidden}
-.brand-wordmark{position:absolute;top:-22px;left:-29px;display:block;width:206px;max-width:none;height:auto;mix-blend-mode:multiply}
+.brand-combination{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-emblem-frame{display:block;width:44px;flex:0 0 44px}
+.brand-emblem{display:block;width:44px;height:auto;mix-blend-mode:multiply}
+.brand-logo-frame{display:block;width:164px}
+.brand-logo{display:block;width:164px;height:auto;mix-blend-mode:multiply}
+.brand-wordmark-frame{display:block;width:150px}
+.brand-wordmark{display:block;width:150px;height:auto;mix-blend-mode:multiply}
 .header-actions{display:flex;align-items:center;gap:17px}
 .language-selector{position:relative}
 .language-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:74px;padding:7px 10px;border:1px solid #b9b5b8;border-radius:999px;background:transparent;color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.4px;cursor:pointer}
@@ -34,11 +34,11 @@ html[lang="en"] .hero h1{font-size:clamp(32px,4.3vw,60px);letter-spacing:-.065em
 
 @media(max-width:720px){
   .site-header{height:68px}
-  .brand-combination{gap:7px}
-  .brand-emblem-frame{width:27px;height:26px;flex-basis:27px}
-  .brand-emblem{top:-12px;left:-15px;width:54px}
-  .brand-logo-frame{width:117px;height:36px}
-  .brand-logo{top:-32px;left:-22px;width:158px}
+  .brand-combination{gap:8px}
+  .brand-emblem-frame{width:28px;flex-basis:28px}
+  .brand-emblem{width:28px}
+  .brand-logo-frame{width:117px}
+  .brand-logo{width:117px}
   .header-actions{gap:11px}
   .language-toggle{min-width:76px;padding:8px 10px;font-size:11px}
 
