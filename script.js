@@ -155,7 +155,7 @@ document.querySelectorAll('nav a').forEach((link) => {
   });
 });
 
-const sectionNavigationLinks = document.querySelectorAll('nav a[href^="#"], .section-rail a[href^="#"]');
+const sectionNavigationLinks = document.querySelectorAll('nav a[href^="#"]');
 const linkedSections = [...new Set([...sectionNavigationLinks]
   .map((link) => link.getAttribute('href'))
   .filter((href) => href && href !== '#top'))]

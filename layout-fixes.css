@@ -23,15 +23,6 @@ nav a:not(.nav-cta).active::after{position:absolute;right:0;bottom:-8px;left:0;h
 .footer-nav a{color:#74727a}
 .footer-nav a:hover,.footer-nav a:focus-visible,.footer-nav a.active{color:var(--ink);outline:none}
 .footer-nav a.active::after{bottom:-4px}
-.section-rail{position:fixed;z-index:15;top:50%;right:18px;display:flex;flex-direction:column;gap:4px;padding:7px;transform:translateY(-50%);border:1px solid rgba(32,33,38,.16);border-radius:19px;background:rgba(248,247,245,.9);box-shadow:0 12px 28px rgba(32,33,38,.1);backdrop-filter:blur(12px)}
-.section-rail a{display:flex;align-items:center;gap:8px;min-width:34px;height:30px;padding:0 8px;border-radius:999px;color:#6b6970;font-size:10px;font-weight:700;letter-spacing:.4px;transition:background .2s ease,color .2s ease,min-width .2s ease}
-.section-rail a span{display:inline-grid;place-items:center;width:18px;color:var(--violet);font-variant-numeric:tabular-nums}
-.section-rail a b{display:block;max-width:0;overflow:hidden;opacity:0;white-space:nowrap;font-size:11px;font-weight:700;transition:max-width .2s ease,opacity .16s ease}
-.section-rail a:hover,.section-rail a:focus-visible,.section-rail a.active{min-width:118px;background:var(--ink);color:var(--white);outline:none}
-.section-rail a:hover span,.section-rail a:focus-visible span,.section-rail a.active span{color:#f3b1ca}
-.section-rail a:hover b,.section-rail a:focus-visible b,.section-rail a.active b{max-width:82px;opacity:1}
-.section-rail .rail-contact{margin-top:3px;border-top:1px solid rgba(32,33,38,.14);border-radius:0 0 12px 12px}
-.section-rail .rail-contact:hover,.section-rail .rail-contact:focus-visible,.section-rail .rail-contact.active{border-color:transparent;border-radius:999px}
 .hero h1>span,.hero h1 em{display:block}
 .hero h1{font-size:clamp(40px,5vw,74px);letter-spacing:-.085em}
 .hero h1>span,.hero h1 em{white-space:nowrap!important}
@@ -47,10 +38,6 @@ html[lang="en"] .hero h1{font-size:clamp(32px,4.3vw,60px);letter-spacing:-.065em
   .site-header nav{display:none;position:absolute;top:79px;left:0;right:0;padding:20px 6vw 24px;flex-direction:column;align-items:flex-start;gap:20px;background:var(--paper);border-bottom:1px solid #dedcda}
   .site-header nav.open{display:flex}
   .menu-toggle{display:block}
-}
-
-@media(max-width:720px){
-  .section-rail{display:none}
 }
 
 @media(max-width:720px){
