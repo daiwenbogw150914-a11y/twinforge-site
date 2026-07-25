@@ -155,7 +155,7 @@ document.querySelectorAll('nav a').forEach((link) => {
   });
 });
 
-const sectionNavigationLinks = document.querySelectorAll('nav a[href^="#"]');
+const sectionNavigationLinks = document.querySelectorAll('nav a[href^="#"], .section-rail a[href^="#"]');
 const linkedSections = [...new Set([...sectionNavigationLinks]
   .map((link) => link.getAttribute('href'))
   .filter((href) => href && href !== '#top'))]
@@ -170,6 +170,8 @@ const setActiveSection = (id) => {
     else link.removeAttribute('aria-current');
   });
 };
+
+if (linkedSections[0]) setActiveSection(linkedSections[0].id);
 
 if ('IntersectionObserver' in window) {
   const sectionObserver = new IntersectionObserver((entries) => {
