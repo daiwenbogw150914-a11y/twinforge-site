@@ -1,10 +1,7 @@
-/* Brand lockup: built from the supplied Twinforge mark proportions. */
-.brand{gap:11px;color:var(--ink)}
-.brand-copy{display:block;line-height:1}
-.brand-word{display:block;white-space:nowrap}
-.brand-letter-i{position:relative;display:inline-block;width:.15em;height:.63em;margin:0 .025em;vertical-align:-.02em;background:currentColor;border-radius:2px 2px 0 0}
-.brand-letter-i::before{position:absolute;top:-.38em;left:50%;width:.24em;height:.24em;transform:translateX(-50%);border-radius:50%;background:var(--lav);content:""}
-.brand-copy small{display:block;margin:4px 0 0 2px;color:var(--lav);font-size:8px;letter-spacing:4.4px;line-height:1}
+/* Use the supplied official lockup rather than a CSS recreation. */
+.brand{display:inline-flex;align-items:center;min-width:0;color:var(--ink)}
+.brand-logo-frame{position:relative;display:block;width:178px;height:55px;overflow:hidden}
+.brand-logo{position:absolute;top:-50px;left:-36px;display:block;width:243px;max-width:none;height:auto;mix-blend-mode:multiply}
 .header-actions{display:flex;align-items:center;gap:17px}
 .language-selector{position:relative}
 .language-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:74px;padding:7px 10px;border:1px solid #b9b5b8;border-radius:999px;background:transparent;color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.4px;cursor:pointer}
@@ -13,12 +10,6 @@
 .language-menu[hidden]{display:none}
 .language-menu button{display:block;width:100%;padding:9px 11px;border:0;border-radius:8px;background:transparent;color:var(--ink);font:inherit;font-size:13px;text-align:left;cursor:pointer}
 .language-menu button:hover,.language-menu button:focus-visible{background:#f0eaf2;outline:none}
-.brand-mark{position:relative;width:30px;height:31px;flex:0 0 30px}
-.brand-mark i:nth-child(1){left:1px;bottom:2px;width:10px;height:25px;border-radius:13px 0 1px 1px}
-.brand-mark i:nth-child(2){right:5px;bottom:2px;width:12px;height:14px;border-radius:0 12px 1px 1px}
-.brand-mark i:nth-child(3){right:8px;top:0;width:6px;height:12px;background:var(--lav)}
-.brand-mark i:nth-child(4){right:0;bottom:2px;width:6px;height:6px;background:#f28a6b;border-radius:50%}
-
 .hero h1>span,.hero h1 em{display:block}
 .hero h1{font-size:clamp(40px,5vw,74px);letter-spacing:-.085em}
 .hero h1>span,.hero h1 em{white-space:nowrap!important}
@@ -32,13 +23,8 @@ html[lang="en"] .hero h1{font-size:clamp(32px,4.3vw,60px);letter-spacing:-.065em
 
 @media(max-width:720px){
   .site-header{height:68px}
-  .brand{gap:12px;font-size:22px}
-  .brand-mark{width:33px;height:34px;flex-basis:33px}
-  .brand-mark i:nth-child(1){width:11px;height:28px}
-  .brand-mark i:nth-child(2){width:13px;height:16px}
-  .brand-mark i:nth-child(3){width:7px;height:13px}
-  .brand-mark i:nth-child(4){width:6px;height:6px}
-  .brand-copy small{font-size:8px;letter-spacing:4.7px}
+  .brand-logo-frame{width:145px;height:45px}
+  .brand-logo{top:-41px;left:-29px;width:198px}
   .header-actions{gap:11px}
   .language-toggle{min-width:76px;padding:8px 10px;font-size:11px}
 
