@@ -11,6 +11,7 @@ const descriptionElement = document.querySelector('meta[name="description"]');
 const translations = {
   '关于我们': 'About us',
   '服务能力': 'Services',
+  '核心能力': 'Core capabilities',
   '资源网络': 'Network',
   '案例方向': 'Work scenarios',
   '联系合作': 'Contact us',
@@ -153,6 +154,33 @@ document.querySelectorAll('nav a').forEach((link) => {
     toggle.textContent = document.documentElement.lang === 'en' ? 'Menu' : '菜单';
   });
 });
+
+const sectionNavigationLinks = document.querySelectorAll('nav a[href^="#"]');
+const linkedSections = [...new Set([...sectionNavigationLinks]
+  .map((link) => link.getAttribute('href'))
+  .filter((href) => href && href !== '#top'))]
+  .map((href) => document.querySelector(href))
+  .filter(Boolean);
+
+const setActiveSection = (id) => {
+  sectionNavigationLinks.forEach((link) => {
+    const active = link.getAttribute('href') === `#${id}`;
+    link.classList.toggle('active', active);
+    if (active) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+};
+
+if ('IntersectionObserver' in window) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visibleSection = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
+    if (visibleSection?.target.id) setActiveSection(visibleSection.target.id);
+  }, { rootMargin: '-32% 0px -58% 0px', threshold: [0.05, 0.2, 0.5] });
+
+  linkedSections.forEach((section) => sectionObserver.observe(section));
+}
 
 const closeLanguageMenu = () => {
   languageMenu.hidden = true;
